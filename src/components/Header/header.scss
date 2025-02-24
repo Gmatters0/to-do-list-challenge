@@ -1,0 +1,25 @@
+@import "../../../variables";
+
+header {
+  background-color: $main-blue;
+  height: 7.4rem;
+  width: 100%;
+}
+
+nav {
+  margin: 0rem 8rem;
+  height: 100%;
+  gap: 4rem;
+}
+
+a {
+  color: white;
+  padding: 1rem;
+}
+
+.current-page {
+  background-color: white;
+  border-radius: 1rem 1rem 0rem 0rem;
+  
+  color: $main-blue;
+}
