@@ -74,6 +74,14 @@ a {
   justify-content: center;
 }
 
+.jc-space-btw {
+  justify-content: space-between;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
+}
+
 .al-center {
   align-items: center;
 }
@@ -86,5 +94,12 @@ a {
   align-items: end;
 }
 
+.margin-t {
+  margin-top: 8rem;
+}
+
+.margin-b {
+  margin-bottom: 8rem;
+}
 
 
