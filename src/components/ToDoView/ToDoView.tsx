@@ -6,15 +6,15 @@ import EditIcon from "../../assets/editIcon.svg"
 import DeleteIcon from "../../assets/deleteIcon.svg"
 import { ToDoItemData } from "../../types/toDoItem"
 import { useState } from "react"
-import EditModal from "../Modals/EditModal/EditModal" // Importe o componente do modal
-import DeleteModal from "../Modals/DeleteModal/DeleteModal" // Importe o componente de modal de exclusão
+import EditModal from "../Modals/EditModal/EditModal"
+import DeleteModal from "../Modals/DeleteModal/DeleteModal"
 
 function ToDo() {
   const [toDos, setToDos] = useState<ToDoItemData[]>([])
   const [newToDo, setNewToDo] = useState<string>("")
   const [showEditModal, setShowEditModal] = useState<boolean>(false)
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false)
-  const [currentTaskId, setCurrentTaskId] = useState<string | null>(null)
+  const [currentTaskId, setCurrentTaskId] = useState<string>("")
 
   const addToDoItem = () => {
     if(newToDo !== "") {
@@ -74,7 +74,7 @@ function ToDo() {
   const closeModal = () => {
     setShowEditModal(false)
     setShowDeleteModal(false)
-    setCurrentTaskId(null)
+    setCurrentTaskId("")
   }
 
   // Função para pegar o título da tarefa atual

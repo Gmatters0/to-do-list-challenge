@@ -1,4 +1,3 @@
-// DeleteModal.tsx
 import React from 'react';
 import '../modals.scss';
 
