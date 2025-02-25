@@ -1,6 +1,6 @@
-export interface ToDoItem {
-  id: number,
-  text: string,
+export interface ToDoItemData {
+  id: string,
+  title: string,
   description: string,
   completed: boolean
 }

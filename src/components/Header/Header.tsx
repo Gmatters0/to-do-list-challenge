@@ -8,8 +8,8 @@ function Header() {
   return (
     <header>
       <nav className='d-flex fd-row al-end'>
-        <Link to="/organizacao"><a className={location.pathname === "/organizacao" ? 'current-page' : ''}>Organização</a></Link>
-        <Link to="/tarefas"><a className={location.pathname === "/tarefas" ? 'current-page' : ''}>Tarefas</a></Link>   
+        <Link className={location.pathname === "/organizacao" ? 'current-page' : ''} to="/organizacao">Organização</Link>
+        <Link className={location.pathname === "/tarefas" ? 'current-page' : ''} to="/tarefas">Tarefas</Link>   
       </nav>
     </header>
   )
