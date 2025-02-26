@@ -177,7 +177,7 @@ function ToDo() {
         )}
       </main>
     )
-  } else if (location.pathname === "/organizacao") {
+  } else if (location.pathname === "/") {
     return (
       <main className='d-flex fd-column jc-center al-center'>
         <div className='margin-b margin-t tx-center'>
