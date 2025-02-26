@@ -122,7 +122,7 @@ function ToDo() {
   if (location.pathname === "/tarefas") {
     return (
       <main className='d-flex fd-column jc-center al-center'>
-        <div className='margin-b margin-t'>
+        <div className='margin-b margin-t tx-center'>
           <h1>Otimize seu tempo e se organize com o nosso Planejador Diário.</h1>
         </div>  
         <div className="todo-list">
@@ -180,7 +180,7 @@ function ToDo() {
   } else if (location.pathname === "/organizacao") {
     return (
       <main className='d-flex fd-column jc-center al-center'>
-        <div className='margin-b margin-t'>
+        <div className='margin-b margin-t tx-center'>
           <h1>Otimize seu tempo e se organize com o nosso Planejador Diário.</h1>
         </div>
         <section className="d-flex fd-row jc-center tasks-resume">
