@@ -83,7 +83,8 @@ function ToDo() {
     setCurrentTaskId("")
   }
 
-  const handleKeyPress = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
       addToDoItem()
     }
@@ -183,40 +184,49 @@ function ToDo() {
           <h1>Otimize seu tempo e se organize com o nosso Planejador Diário.</h1>
         </div>
         <section className="d-flex fd-row jc-center tasks-resume">
-          <div>
-            <h3>Tarefas a fazer</h3>
-            <ul>
-              {
-                uncompletedTasks.map((toDo) => (
-                  <li>
-                    <div key={toDo.id} className="d-flex al-center todo-item">
-                      <p style={{ textDecoration: toDo.completed ? 'line-through' : 'none'}} className="item-title">{toDo.title}</p>
-                      <div className="item-checkbox d-flex jc-center">
-                        <img onClick={() => completeTask(toDo.id)} className="c-pointer" src={!toDo.completed ? Checkbox : CompletedCheckbox} alt="checkbox"/>
-                      </div>
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
-          </div> 
-          <div>
-            <h3>Tarefas completas</h3>
-            <ul>
-              {
-                completedTasks.map((toDo) => (
-                  <li>
-                    <div key={toDo.id} className="d-flex al-center todo-item">
-                      <p style={{ textDecoration: toDo.completed ? 'line-through' : 'none'}} className="item-title">{toDo.title}</p>
-                      <div className="item-checkbox d-flex jc-center">
-                        <img onClick={() => completeTask(toDo.id)} className="c-pointer" src={!toDo.completed ? Checkbox : CompletedCheckbox} alt="checkbox"/>
-                      </div>
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+          {
+            toDos.length == 0 
+            ? (
+            <h3>Você ainda não tem tarefas cadastradas!</h3>
+          ) : (
+            <>
+              <div>
+                <h3>Tarefas a fazer</h3>
+                <ul>
+                  {
+                    uncompletedTasks.map((toDo) => (
+                      <li>
+                        <div key={toDo.id} className="d-flex al-center todo-item">
+                          <p style={{ textDecoration: toDo.completed ? 'line-through' : 'none'}} className="item-title">{toDo.title}</p>
+                          <div className="item-checkbox d-flex jc-center">
+                            <img onClick={() => completeTask(toDo.id)} className="c-pointer" src={!toDo.completed ? Checkbox : CompletedCheckbox} alt="checkbox"/>
+                          </div>
+                        </div>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div> 
+              <div>
+                <h3>Tarefas completas</h3>
+                <ul>
+                  {
+                    completedTasks.map((toDo) => (
+                      <li>
+                        <div key={toDo.id} className="d-flex al-center todo-item">
+                          <p style={{ textDecoration: toDo.completed ? 'line-through' : 'none'}} className="item-title">{toDo.title}</p>
+                          <div className="item-checkbox d-flex jc-center">
+                            <img onClick={() => completeTask(toDo.id)} className="c-pointer" src={!toDo.completed ? Checkbox : CompletedCheckbox} alt="checkbox"/>
+                          </div>
+                        </div>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </>
+          )
+          }
         </section>
       </main>
     )
